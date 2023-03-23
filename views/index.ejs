@@ -1,7 +1,7 @@
 
 <!-- update our db -->
 
-<h3> Delete current drinks available</h3> 
+<h3> Delete Shoes</h3> 
  <% for (var i=0; i< drinkData.length; i++ ) { %>
   <form method="POST" action="/deleteDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
     <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) 
@@ -10,7 +10,7 @@
   <br/>
 <% } %> 
 
-<h3> Change current available drinks</h3> 
+<h3> Make a change to your current shoes</h3> 
  <% for (var i=0; i< drinkData.length; i++ ) { %>
   <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
     <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) 
@@ -19,7 +19,7 @@
   <br/>
 <% } %> 
 
-<h3> Add a new drink </h3>
+<h3> Add a new shoe to your collection </h3>
 <h3> Please lists sizes small, medium, large </h3>
 
 <form method="POST" action="/addDrink">
