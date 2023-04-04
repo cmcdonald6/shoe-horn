@@ -1,8 +1,10 @@
-# shoe-horn Application
+# Shoe-Horn Application
+
 ----------------------------------------------------------------------------------------------
 This is a group project meant to improve our skills as DEVS 😎
 
 Goals, Issues, and information on our process can be found in our GIST as well as issues page
+
 ----------------------------------------------------------------------------------------------
 CIS 486 Final Product
 
