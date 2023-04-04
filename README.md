@@ -1,4 +1,4 @@
-# Shoe-Horn Application
+Shoe-Horn Application
 
 ----------------------------------------------------------------------------------------------
 This is a group project meant to improve our skills as DEVS 😎
