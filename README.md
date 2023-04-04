@@ -3,7 +3,7 @@ Shoe-Horn Application
 ----------------------------------------------------------------------------------------------
 This is a group project meant to improve our skills as DEVS 🤓
 
-Goals, Issues, and information on our process can be found in our GIST as well as issues page
+Goals, Issues, and information on our process can be found in our WIKI as well as issues page
 
 ----------------------------------------------------------------------------------------------
 Final Product
