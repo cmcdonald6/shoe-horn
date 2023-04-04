@@ -16,8 +16,9 @@ async function cxnDB(){
 
   try{
     client.connect; 
-    const collection = client.db("chillAppz").collection("drinkz");
+    const collection = client.db("Shoehorn").collection("Shoe");
     const result = await collection.find().toArray();
+    console.log(result);
     console.log("cxnDB result: ", result);
     return result; 
   }
@@ -30,13 +31,9 @@ async function cxnDB(){
 }
 
 
-
 app.get('/', async (req, res) => {
 
-  let result = await cxnDB().catch(console.error); 
-
-
-  res.render('index', {  drinkData : result })
+  res.redirect('/login')
 })
 
 app.get('/mongo', async (req, res) => {
@@ -48,16 +45,56 @@ app.get('/mongo', async (req, res) => {
   res.send(`here ya go, joe. ${ result[1].drink_name }` ); 
 
 })
+app.get('/login', function(req, res){
+  res.render('login');
+});
 
+app.post('/login', function (req, res, next) {
+ /* authenticate(req.body.username, req.body.password, function(err, user){
+    if (err) return next(err)
+    if (user) {
+      // Regenerate session when signing in
+      // to prevent fixation
+      req.session.regenerate(function(){
+        // Store the user's primary key
+        // in the session store to be retrieved,
+        // or in this case the entire user object
+        req.session.user = user;
+        req.session.success = 'Authenticated as ' + user.name
+          + ' click to <a href="/logout">logout</a>. '
+          + ' You may now access <a href="/restricted">/restricted</a>.';
+        res.redirect('back');
+      });
+    } else {
+      req.session.error = 'Authentication failed, please check your '
+        + ' username and password.'
+        + ' (use "tj" and "foobar")';
+      res.redirect('/login');
+    }
+  });
+});
+*/
+res.redirect('/home')
+})
+
+app.get('/home', async (req, res) => {
+
+  let result = await cxnDB().catch(console.error); 
+
+
+  res.render('index', {  drinkData : result })
+})
 
 app.post('/addDrink', async (req, res) => {
 
   try {
     client.connect; 
-    const collection = client.db("chillAppz").collection("drinkz");
+    console.log("You got here.")
+    const collection = client.db("Shoehorn").collection("Shoe");
+    console.log("You got here2.")
     await collection.insertOne(req.body);
-      
-    res.redirect('/');
+    console.log("You got here3.")  
+    res.redirect('/home');
   }
   catch(e){
     console.log(error)
@@ -75,11 +112,11 @@ app.post('/deleteDrink/:id', async (req, res) => {
     console.log("req.parms.id: ", req.params.id) 
     
     client.connect; 
-    const collection = client.db("chillAppz").collection("drinkz");
+    const collection = client.db("Shoehorn").collection("Shoe");
     let result = await collection.findOneAndDelete( { _id: new ObjectId( req.params.id) })
     .then(result => {
       console.log(result); 
-      res.redirect('/');
+      res.redirect('/home');
     })
     .catch(error => console.error(error))
   }
@@ -95,12 +132,12 @@ app.post('/updateDrink/:id', async (req, res) => {
     console.log("req.parms.id: ", req.params.id) 
     
     client.connect; 
-    const collection = client.db("chillAppz").collection("drinkz");
+    const collection = client.db("Shoehorn").collection("Shoe");
     let result = await collection.findOneAndUpdate( 
       { _id: new ObjectId( req.params.id)}, {$set:{ "size": "big boy size"}})
     .then(result => {
       console.log(result); 
-      res.redirect('/');
+      res.redirect('/home');
     })
     .catch(error => console.error(error))
   }
