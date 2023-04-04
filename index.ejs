@@ -1,0 +1,40 @@
+
+<!-- update our db -->
+
+<h3> Delete Shoes</h3> 
+ <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/deleteDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].price %>)  
+    <input type="submit" value="delete"> 
+  </form>
+  <br/>
+<% } %> 
+
+<h3> Make a change to your current shoes</h3> 
+ <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].price %>) 
+    <input type="submit" value="update"> 
+  </form>
+  <br/>
+<% } %> 
+
+<h3> Add a new shoe to your collection </h3>
+
+<form method="POST" action="/addDrink">
+    <label for="drink_name"></label>
+        <input name="drink_name" value="new drink">
+    <br>
+    <label for="size">size</label>
+      <input name="size" value="small"> 
+    <br>
+    <label for="brand">brand</label>
+    <input name="brand" value="nike"> 
+  <br>
+  <label for="price">value</label>
+  <input name="price" value="$70"> 
+<br>
+    <input type="submit" value="new drink" />
+</form>
+
+  
