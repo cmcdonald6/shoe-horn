@@ -6,7 +6,9 @@ Goals, Issues, and information on our process can be found in our WIKI as well a
 # Story Card
 
 **As a** *Shoe enthusiast* 👟:smirk:
+
 **I want** *An app to view my collection and value of owned shoes*
+
 **So that** *I can easily see what I own and easily see current value of collection*
 
 # ABOUT US
