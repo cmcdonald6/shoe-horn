@@ -3,7 +3,7 @@ This is a group project meant to improve our skills as DEVS 🤓
 
 Goals, Issues, and information on our process can be found in our WIKI as well as issues page
 
-# Story Card
+# Story Card :scroll:
 
 **As a** *Shoe enthusiast* 👟:smirk:
 
