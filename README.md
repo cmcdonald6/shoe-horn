@@ -18,3 +18,7 @@ Shoehorn is an app for shoe enthusiasts to easily keep an up-to-date look at the
 # **Quick Links**
 
 *The team behind Shoe Horn:* https://github.com/cmcdonald6/shoe-horn/wiki/Meet-the-Team
+
+*Shoe Horny Design Wiki:* https://github.com/cmcdonald6/shoe-horn/wiki
+
+*Shoe Horn Project Board:* https://github.com/users/cmcdonald6/projects/1
