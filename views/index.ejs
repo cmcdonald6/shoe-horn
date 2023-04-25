@@ -15,7 +15,7 @@
 <h3> Delete Shoes</h3> 
 <% for (var i=0; i< drinkData.length; i++ ) { %>
   <form method="POST" action="/deleteDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
-    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].price %>)  
+    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>)
     <input type="submit" value="delete"> 
   </form>
   <br/>
@@ -33,9 +33,11 @@
     <label for="brand">Brand</label>
     <input name="brand"> 
   <br>
-  <label for="price">Value</label>
-  <input name="price"> 
+  <label for="originalprice">Original Price</label>
+  <input name="originalprice"> 
 <br>
+<label for="currentvalue">Current Value</label>
+<input name="currentvalue"> 
     <input type="submit" value="Submit" />
 </form>
 
