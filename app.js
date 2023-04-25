@@ -80,7 +80,7 @@ res.redirect('/home')
 app.get('/home', async (req, res) => {
 
   let result = await cxnDB().catch(console.error); 
-
+ 
 
   res.render('index', {  drinkData : result })
 })
@@ -153,3 +153,4 @@ console.log('in the node console');
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${ PORT }`)
 })
+
