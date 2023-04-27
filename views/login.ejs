@@ -4,7 +4,7 @@
  <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Profile | suhasrkms</title>
+      <title> Shoe Horn </title>
 
       <!-- Fonts -->
       <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,7 +20,7 @@
          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                <a class="navbar-brand" href="#">
-               Navbar
+               Shoe Horn
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                <span class="navbar-toggler-icon"></span>
@@ -32,10 +32,11 @@
                   <!-- Right Side Of Navbar -->
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link One</a>
+                        <a class="https://github.com/cmcdonald6/shoe-horn" href="#">  Shoe Horn Repo  </a>
                      </li>
+
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link Two</a>
+                        <a class="https://github.com/cmcdonald6/shoe-horn/wiki" href="#">  Shoe Horn Wiki  </a>
                      </li>
                   </ul>
                </div>
@@ -47,12 +48,10 @@
 <main class="py-4">
             <div class="container">
                <div class="row justify-content-center">
-                  <div class="col-lg-4">
-                     <h4 class="pb-2">
-                        Profile Information
-                     </h4>
-                     <span class="text-justify mb-3" style="padding-top:-3px;">Update your account's profile information and email address.<br><br> When You change your email ,you need to verify your email else the account will be blocked</span>
-                  </div>
+                  <!--<div class="col-lg-4">
+                    
+                     <span class="text-justify mb-3" style="padding-top:-3px;">Please sign in using your email or password <br><br> You can also sign in using your GitHub</span>
+                  </div> -->
                   <div class="col-lg-8 text-center pt-2">
                      <div class="card py-4 mb-5 mt-md-3 bg-white rounded " style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
@@ -65,15 +64,24 @@
                               <label for="password" class="pt-3 col-12 text-left pl-0">Email</label>
                               <input type="text" class="col-md-8 form-control"  placeholder="*****************">
                               
-                              <body>
+                              <!--<body>
                                   <a href="/auth/github">Login with GitHub</a>
-                              </body>
+                              </body> -->
+
+
+                              <div class="form-group row mb-0 mr-4">
+                                <div class="col-md-8 offset-md-4 text-right">
+                                  <a href="/auth/github" class="btn btn-info" role="button">GitHub Sign In</a>
+                                 </div>
+                            </div>
 
                             </div>
                             <div class="form-group row mb-0 mr-4">
+                              <form method="post" action="/login">
                                 <div class="col-md-8 offset-md-4 text-right">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                  <input type="submit" value="Login">
                                  </div>
+                                </form>
                             </div>
                         </form>
 
@@ -81,7 +89,7 @@
                   </div>
                </div>
 
-<!--  <body>
+  <!-- <body>
     <a href="/auth/github">Login with GitHub</a>
   </body>
 </html>
@@ -97,6 +105,6 @@
     <input type="password" name="password" id="password">
   </p>
   <p>
-    <input type="submit" value="Login">
+    
   </p>
 </form> -->
