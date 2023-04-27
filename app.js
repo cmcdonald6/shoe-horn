@@ -4,12 +4,54 @@ const app = express()
 const bodyParser = require('body-parser')
 const { urlencoded } = require('body-parser')
 const { ObjectId } = require('mongodb')
+var passport = require('passport');
+var util = require('util');
+var session = require('express-session');
+var methodOverride = require('method-override');
+var GitHubStrategy = require('passport-github2').Strategy;
+var partials = require('express-partials');
 const PORT = process.env.PORT || 3000;
 const herokuVar = process.env.HEROKU_NAME || "local Barry"
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const client = new MongoClient(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
+app.use(passport.initialize());
+app.use(partials());
+app.use(bodyParser.json());
+app.use(methodOverride());
+app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(passport.session());
+app.use(express.static(__dirname + '/public'));
+
+var GITHUB_CLIENT_ID = "3501becc3a11eb55784e";
+var GITHUB_CLIENT_SECRET = "483e2c99b8e4b2361845f4dc975c404b7dc94185";
+
+passport.use(new GitHubStrategy({
+  clientID: GITHUB_CLIENT_ID,
+  clientSecret: GITHUB_CLIENT_SECRET,
+  callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+},
+function(accessToken, refreshToken, profile, done) {
+  // asynchronous verification, for effect...
+  process.nextTick(function () {
+    
+    // To keep the example simple, the user's GitHub profile is returned to
+    // represent the logged-in user.  In a typical application, you would want
+    // to associate the GitHub account with a user record in your database,
+    // and return that user instead.
+    return done(null, profile);
+  });
+}
+));
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
 
 
 async function cxnDB(){
@@ -32,9 +74,22 @@ async function cxnDB(){
 
 
 app.get('/', async (req, res) => {
-
   res.redirect('/login')
 })
+
+app.get('/auth/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/home');
+  });
+
+app.get('/auth/github',
+  passport.authenticate('github', { scope: [ 'user:email' ] }),
+  function(req, res){
+    // The request will be redirected to GitHub for authentication, so this
+    // function will not be called.
+  });
+
 
 app.get('/mongo', async (req, res) => {
 
@@ -47,6 +102,11 @@ app.get('/mongo', async (req, res) => {
 })
 app.get('/login', function(req, res){
   res.render('login');
+});
+
+
+app.get('/account', ensureAuthenticated, function(req, res){
+  res.render('account', { user: req.user });
 });
 
 app.post('/login', function (req, res, next) {
@@ -154,3 +214,7 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${ PORT }`)
 })
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}

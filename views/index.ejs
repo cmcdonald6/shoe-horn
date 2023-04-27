@@ -34,7 +34,7 @@
 <h3> Your Closet</h3> 
  <% for (var i=0; i< drinkData.length; i++ ) { %>
   <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
-    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>) (<%= drinkData[i].price %>) 
+    <%= drinkData[i].name %> (<%= drinkData[i].size %>) (<%= drinkData[i].brand %>)  (<%= drinkData[i].originalprice %>) (<%= drinkData[i].currentvalue %>) 
     <input type="submit" value="update"> 
   </form>
   <br/>
