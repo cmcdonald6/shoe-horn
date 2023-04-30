@@ -25,7 +25,7 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 var GITHUB_CLIENT_ID = "3501becc3a11eb55784e";
-var GITHUB_CLIENT_SECRET = "483e2c99b8e4b2361845f4dc975c404b7dc94185";
+var GITHUB_CLIENT_SECRET = "dd7189518e04045d55c559adacf93c24bd77b24d";
 
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
