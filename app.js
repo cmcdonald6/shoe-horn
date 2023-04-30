@@ -30,7 +30,7 @@ var GITHUB_CLIENT_SECRET = "483e2c99b8e4b2361845f4dc975c404b7dc94185";
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: "https://test-myqn.onrender.com/auth/github/callback"
+  callbackURL: https://shoehorn.onrender.com/auth/github/callback"
 },
 function(accessToken, refreshToken, profile, done) {
   // asynchronous verification, for effect...
