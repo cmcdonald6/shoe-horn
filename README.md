@@ -24,7 +24,7 @@ Shoehorn is an app for shoe enthusiasts to easily keep an up-to-date look at the
 *Shoe Horn Project Board:* https://github.com/users/cmcdonald6/projects/1 :bar_chart: :wink:
 
 # Presentation/Live Demonstration Outline (University of North Alabama, Raburn Wing 210 May 2nd, 2023 @ 4:19pm)
-- Introduction (John): Introduce the Shoe Horn Dev Team and our product, Shoe Horn. Discuss the user story, and in general why this app is useful.
+- Introduction (John): Introduce the Shoe Horn Dev Team and our product, Shoe Horn. Discuss the [user story](https://github.com/cmcdonald6/shoe-horn#story-card-scroll), and in general why this app is useful. 
 - Live Demo (Cody): Show off [the application](https://shoehorn.onrender.com) to the audience, go over all of the CRUD functions, remember to enhance on the projector.
 - OAuth Implementation (Sam): Discuss the process of getting OAuth to function properly, etc.
 - Conclusion (Hau and all): Briefly discuss our process of tackling issues as a dev team and what we plan to do with Shoe Horn in the future.
