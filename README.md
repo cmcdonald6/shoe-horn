@@ -29,4 +29,4 @@ Shoehorn is an app for shoe enthusiasts to easily keep an up-to-date look at the
 - OAuth Implementation (Sam): Discuss the process of getting OAuth to function properly, etc.
 - Conclusion (Hau and all): Briefly discuss our process of tackling issues as a dev team and what we plan to do with Shoe Horn in the future.
 
-👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯👟📯
+👟📯
