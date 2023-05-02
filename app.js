@@ -53,7 +53,7 @@ passport.deserializeUser(function(obj, done) {
 });
 
 
-/* async function cxnDB(){
+ async function cxnDB(){
 
   try{
     client.connect; 
@@ -69,7 +69,7 @@ passport.deserializeUser(function(obj, done) {
   finally{
     client.close; 
   }
-}   */
+}   
 
 
 app.get('/', async (req, res) => {
